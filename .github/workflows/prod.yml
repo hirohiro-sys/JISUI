@@ -1,7 +1,9 @@
 name: Github Auto Deploy
 
-on: push
-
+on:
+  push:
+    branches:
+      - main
 env:
   VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
