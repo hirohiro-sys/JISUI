@@ -1,8 +1,8 @@
 export default function Page() {
   return (
     <>
-      {/* ここにトップページを作る */}
-      <p className="text-red-500">ここはtopページです。</p>
+      {/* ここにトップページを作る(認証含め) */}
+      <h1 className="flex-grow">ここはtopページです。</h1>
     </>
   );
 }

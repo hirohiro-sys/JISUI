@@ -1,7 +1,14 @@
-import React from 'react'
+import Link from "next/link";
+import React from "react";
 
 export const Header = () => {
   return (
-    <div className='text-red-500'>これはHeaderです。</div>
-  )
-}
+    <header>
+      <div className="navbar">
+        <Link href="/" className="text-2xl">
+          JISUI
+        </Link>
+      </div>
+    </header>
+  );
+};
