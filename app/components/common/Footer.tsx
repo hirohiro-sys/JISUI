@@ -1,28 +1,36 @@
+import Link from "next/link";
 import React from "react";
+import { FaGithub } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { SiQiita } from "react-icons/si";
 
 export const Footer = () => {
   return (
-    <footer className="footer bg-neutral text-neutral-content p-10">
-      <nav>
-        <h6 className="footer-title">Services</h6>
-        <a className="link link-hover">Branding</a>
-        <a className="link link-hover">Design</a>
-        <a className="link link-hover">Marketing</a>
-        <a className="link link-hover">Advertisement</a>
-      </nav>
-      <nav>
-        <h6 className="footer-title">Company</h6>
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
-      </nav>
-      <nav>
-        <h6 className="footer-title">Legal</h6>
-        <a className="link link-hover">Terms of use</a>
-        <a className="link link-hover">Privacy policy</a>
-        <a className="link link-hover">Cookie policy</a>
-      </nav>
-    </footer>
+    <footer className="footer footer-center bg-neutral-500 text-neutral-content rounded p-10">
+    <nav className="grid grid-flow-col gap-20">
+      {/* プライバシーポリシーと利用規約は別途コンポーネントを作成予定 */}
+      <Link className="link link-hover font-bold" href="#">➡︎プライバシーポリシー</Link>
+      <Link className="link link-hover font-bold" href="#">➡︎利用規約</Link>
+      {/* 押下した際にemailの導線に */}
+      <Link className="link link-hover font-bold" href="#">➡︎管理者Email</Link>
+    </nav>
+    <nav>
+      <div className="grid grid-flow-col gap-10">
+        {/* 告知する際は各repや記事、専用アカのリンクに変える */}
+        <Link href="https://github.com/hirohiro-sys" target="_blank">
+        <FaGithub size={32}/>
+        </Link>
+        <Link href="https://twitter.com/qhcSEiFAQg5454" target="_blank">
+        <FaSquareXTwitter size={32}/>
+        </Link>
+        <Link href="https://qiita.com/bisketoriba" target="_blank">
+        <SiQiita size={32}/>
+        </Link>
+      </div>
+    </nav>
+    <aside>
+      <p><i>©{new Date().getFullYear()} JISUI</i></p>
+    </aside>
+  </footer>
   );
 };
