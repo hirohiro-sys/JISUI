@@ -7,7 +7,7 @@ import { SiQiita } from "react-icons/si";
 export const Footer = () => {
   return (
     <footer className="footer footer-center bg-base-300 text-base-content rounded p-10">
-      <nav className="grid grid-flow-col gap-20">
+      <nav className="grid grid-flow-col gap-10">
         {/* プライバシーポリシーと利用規約は別途コンポーネントを作成予定 */}
         <Link className="link link-hover font-bold" href="#">
           ➡︎プライバシーポリシー
