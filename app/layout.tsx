@@ -9,10 +9,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body className="flex flex-col min-h-screen">
-        <Header />
+      <body>
+        {/* <Header /> */}
         {children}
-        <Footer/>
+        {/* <Footer/> */}
         </body>
     </html>
   );
