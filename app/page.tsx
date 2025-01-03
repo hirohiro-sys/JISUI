@@ -12,7 +12,7 @@ export default function Page() {
   };
   return (
     <>
-      <h1 className="flex-grow">うーん、どうしよ</h1>
+      <h1 className="flex-grow">ここにメイン機能実装予定</h1>
       <button onClick={handleGoogleLogout}>ログアウト</button>
     </>
   );
