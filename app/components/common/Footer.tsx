@@ -6,39 +6,82 @@ import { SiQiita } from "react-icons/si";
 
 export const Footer = () => {
   return (
-    <footer className="footer footer-center bg-base-300 text-base-content rounded p-10">
-      <nav className="grid grid-flow-col gap-10">
-        {/* プライバシーポリシーと利用規約は別途コンポーネントを作成予定 */}
-        <Link className="link link-hover font-bold" href="#">
-          ➡︎プライバシーポリシー
-        </Link>
-        <Link className="link link-hover font-bold" href="#">
-          ➡︎利用規約
-        </Link>
-        {/* 押下した際にemailの導線に */}
-        <Link className="link link-hover font-bold" href="#">
-          ➡︎お問い合わせ(管理者)
-        </Link>
-      </nav>
-      <nav>
-        <div className="grid grid-flow-col gap-10">
-          {/* 告知する際は各repや記事、専用アカのリンクに変える */}
-          <Link href="https://github.com/hirohiro-sys" target="_blank">
-            <FaGithub size={32} />
-          </Link>
-          <Link href="https://twitter.com/qhcSEiFAQg5454" target="_blank">
-            <FaSquareXTwitter size={32} />
-          </Link>
-          <Link href="https://qiita.com/bisketoriba" target="_blank">
-            <SiQiita size={32} />
-          </Link>
+    <div className="bg-gray-900">
+      <footer className="mx-auto max-w-screen-2xl px-4 md:px-8">
+        <div className="mb-16 grid grid-cols-2 gap-12 pt-10 md:grid-cols-4 lg:grid-cols-6 lg:gap-8 lg:pt-12">
+          <div className="col-span-full lg:col-span-2">
+            <div className="mb-4 lg:-mt-2">
+              <Link
+                href="#"
+                className="inline-flex items-center gap-2 text-xl font-bold text-gray-100 md:text-2xl"
+                aria-label="logo"
+              >
+                JISUI
+              </Link>
+            </div>
+
+            <p className="mb-6 text-gray-400 sm:pr-8">
+              〜自炊をもっと楽しく〜
+            </p>
+            <div className="flex gap-4">
+              <Link
+                href="#"
+                target="_blank"
+                className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+              >
+                <FaGithub size={30}/>
+              </Link>
+
+              <Link
+                href="#"
+                target="_blank"
+                className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+              >
+                <FaSquareXTwitter size={30}/>
+              </Link>
+
+              <Link
+                href="#"
+                target="_blank"
+                className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+              >
+                <SiQiita size={30}/>
+              </Link>
+            </div>
+          </div>
+
+          <div>
+            {/* 項目を追加する際は以下のdivタグを複製する */}
+            <div className="mb-4 font-bold uppercase tracking-widest text-gray-100">
+              Legal
+            </div>
+
+            <nav className="flex flex-col gap-4">
+              <div>
+                <Link
+                  href="#"
+                  className="text-gray-400 transition duration-100 hover:underline active:text-indigo-600"
+                >
+                  利用規約
+                </Link>
+              </div>
+
+              <div>
+                <Link
+                  href="#"
+                  className="text-gray-400 transition duration-100 hover:underline active:text-indigo-600"
+                >
+                  プライバシーポリシー
+                </Link>
+              </div>
+            </nav>
+          </div>
         </div>
-      </nav>
-      <aside>
-        <p>
-          <i>©{new Date().getFullYear()} JISUI</i>
-        </p>
-      </aside>
-    </footer>
+
+        <div className="border-t border-gray-800 py-8 text-center text-sm text-gray-400">
+          ©2025 JISUI
+        </div>
+      </footer>
+    </div>
   );
 };

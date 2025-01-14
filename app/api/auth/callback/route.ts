@@ -18,8 +18,8 @@ export async function GET(request: Request) {
                 name: user.data.user?.user_metadata.full_name,
                 auth_id: user.data.user?.id
             },
-            // auth_idカラムにユニーク制約をつけて以下を指定することで、
-            // siginする度にユーザー情報が追加されるのを防ぐ
+            /* auth_idカラムにユニーク制約をつけて以下を指定することで
+               siginする度にユーザー情報が追加されるのを防ぐ */
             { onConflict: "auth_id" }) 
             if (userData.error) {
                 console.log(userData.error.message)

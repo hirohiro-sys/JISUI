@@ -14,7 +14,8 @@ export async function signInWithGoogle() {
             redirectTo: `${process.env.SUPABASE_AUTH_URL}/api/auth/callback`,
             queryParams: {
                 access_type: 'offline',
-                prompt: 'consent',
+                // 一旦同意画面はスキップにしておく
+                prompt: 'select_account',
             },
         },
     });
