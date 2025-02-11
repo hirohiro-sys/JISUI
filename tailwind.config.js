@@ -11,7 +11,6 @@ module.exports = {
   plugins: [
     require('daisyui'),
   ],
-  // なぜかデフォルトでdark modeになってたので修正
   daisyui: {
     themes: ['light']
   }

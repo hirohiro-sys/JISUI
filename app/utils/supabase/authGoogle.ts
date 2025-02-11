@@ -3,9 +3,6 @@
 import { createClient } from "app/utils/supabase/server";
 import { redirect } from "next/navigation";
 
-// ---------------------------------------------
-// Googleログイン
-// ---------------------------------------------
 export async function signInWithGoogle() {
     const supabase = await createClient();
     const { data: { url }, error } = await supabase.auth.signInWithOAuth({
@@ -23,12 +20,7 @@ export async function signInWithGoogle() {
     if (url) redirect(url);
 }
 
-
-// ---------------------------------------------
-// Googleログアウト
-// ---------------------------------------------
 export async function signOut() {
-    // クライアントを作成
     const supabase = await createClient();
     const { error } = await supabase.auth.signOut();
     if (error) console.error('Googleログアウトエラー:', error.message)

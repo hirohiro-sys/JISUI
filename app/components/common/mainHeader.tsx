@@ -1,12 +1,14 @@
+import { signOut } from "app/utils/supabase/authGoogle";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
-import { FcGoogle } from "react-icons/fc";
 
-type handleGoogleLoginProps = {
-  handleGoogleLogin: () => void;
-};
-
-export const Header = ({ handleGoogleLogin }: handleGoogleLoginProps) => {
+export const MainHeader = () => {
+  const router = useRouter();
+  const handleGoogleLogout = async () => {
+    const result = await signOut();
+    if (result) router.push("/login");
+  };
   return (
     <header className="ext-gray-600 body-font bg-gray-100 fixed top-0 left-0 w-full z-50 shadow-md">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -18,12 +20,14 @@ export const Header = ({ handleGoogleLogin }: handleGoogleLoginProps) => {
         </Link>
         <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
           <Link href="#" className="mr-5 hover:underline">
-            JISUIでできること
+            MyPage
           </Link>
         </nav>
-        <button onClick={handleGoogleLogin} className="btn btn-outline">
-          <FcGoogle size={25}/>
-          Googleでサインイン
+        <button
+          onClick={handleGoogleLogout}
+          className="btn btn-active btn-neutral"
+        >
+          ログアウト
         </button>
       </div>
     </header>
