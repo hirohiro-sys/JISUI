@@ -23,6 +23,7 @@ export async function createClient() {
                     } catch (error) {
                         // Server Component内でのCookie設定エラーを無視
                         // ミドルウェアでCookieが処理される
+                        console.log(error);
                     }
                 },
                 remove(name: string, options: CookieOptions) {
@@ -32,6 +33,7 @@ export async function createClient() {
                         }
                     } catch (error) {
                         // Server Component内でのCookie削除エラーを無視
+                        console.log(error);
                     }
                 }
             },
