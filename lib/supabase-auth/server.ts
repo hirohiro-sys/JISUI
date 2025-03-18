@@ -5,7 +5,8 @@ import { cookies } from 'next/headers'
 
 
 export async function createClient() {
-    const cookieStore = cookies()
+    // awaitいらないぽいけどないとeslintのエラーが出るから一旦残しておく
+    const cookieStore = await cookies()
 
     return createServerClient(
         process.env.SUPABASE_URL!,
