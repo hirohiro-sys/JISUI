@@ -5,6 +5,9 @@ on: push
 env:
   VERCEL_ORG_ID: ${{ secrets.ORG_ID }}
   VERCEL_PROJECT_ID: ${{ secrets.PROJECT_ID }}
+  SUPABASE_URL: ${{secrets.SUPABASE_URL}}
+  SUPABASE_ANON_KEY: ${{secrets.SUPABASE_ANON_KEY}}
+  SUPABASE_AUTH_URL: ${{secrets.SUPABASE_AUTH_URL}}
 
 jobs:
   deploy:
